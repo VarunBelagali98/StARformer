@@ -1,0 +1,128 @@
+inside main
+==================================================
+Starting new experiment: hopper expert
+1027 trajectories, 999494 timesteps found
+Average return: 3511.36, std: 328.59
+Max return: 3759.08, min: 1645.28
+==================================================
+number of parameters: 686191
+================================================================================
+Iteration 1
+time/training: 1707.9625222682953
+evaluation/target_3600_return_mean: 2706.511170150989
+evaluation/target_3600_return_std: 1422.3904880857035
+evaluation/target_3600_length_mean: 759.48
+evaluation/target_3600_length_std: 384.4115367675637
+time/total: 1996.4958572387695
+time/evaluation: 288.53333806991577
+training/train_loss_mean: 0.1025422465391457
+training/train_loss_std: 0.05082267569268288
+training/action_error: 0.07156413793563843
+================================================================================
+Iteration 2
+time/training: 1644.423979997635
+evaluation/target_3600_return_mean: 3319.4596748126164
+evaluation/target_3600_return_std: 769.5922544348643
+evaluation/target_3600_length_mean: 923.91
+evaluation/target_3600_length_std: 203.2662340380222
+time/total: 3989.7850892543793
+time/evaluation: 348.8636782169342
+training/train_loss_mean: 0.0653058647390455
+training/train_loss_std: 0.004359464758601484
+training/action_error: 0.055684592574834824
+================================================================================
+Iteration 3
+time/training: 1710.2890708446503
+evaluation/target_3600_return_mean: 3534.020745977907
+evaluation/target_3600_return_std: 261.6581824927949
+evaluation/target_3600_length_mean: 979.99
+evaluation/target_3600_length_std: 79.96617972618174
+time/total: 6101.552099704742
+time/evaluation: 401.4763469696045
+training/train_loss_mean: 0.06021600803509355
+training/train_loss_std: 0.0035877151589422287
+training/action_error: 0.061401478946208954
+================================================================================
+Iteration 4
+time/training: 1725.6525673866272
+evaluation/target_3600_return_mean: 3557.4681986167025
+evaluation/target_3600_return_std: 200.44556544995254
+evaluation/target_3600_length_mean: 984.92
+evaluation/target_3600_length_std: 62.391294264504566
+time/total: 8224.388805866241
+time/evaluation: 397.1825602054596
+training/train_loss_mean: 0.05770870929472149
+training/train_loss_std: 0.003397304931811549
+training/action_error: 0.05942313000559807
+================================================================================
+Iteration 5
+time/training: 1690.6793539524078
+evaluation/target_3600_return_mean: 3590.563060558043
+evaluation/target_3600_return_std: 165.9954840872877
+evaluation/target_3600_length_mean: 993.42
+evaluation/target_3600_length_std: 48.80003688523196
+time/total: 10320.727824926376
+time/evaluation: 405.6581003665924
+training/train_loss_mean: 0.05620020216293633
+training/train_loss_std: 0.0032996711554383134
+training/action_error: 0.055994290858507156
+================================================================================
+Iteration 6
+time/training: 1699.4393877983093
+evaluation/target_3600_return_mean: 3555.639555633208
+evaluation/target_3600_return_std: 236.97136485947658
+evaluation/target_3600_length_mean: 986.17
+evaluation/target_3600_length_std: 71.6015439777663
+time/total: 12429.83490395546
+time/evaluation: 409.6661262512207
+training/train_loss_mean: 0.05507142062038183
+training/train_loss_std: 0.0032423786242374237
+training/action_error: 0.05541468784213066
+================================================================================
+Iteration 7
+time/training: 1701.3817582130432
+evaluation/target_3600_return_mean: 3537.7635055702162
+evaluation/target_3600_return_std: 251.073785773017
+evaluation/target_3600_length_mean: 985.18
+evaluation/target_3600_length_std: 70.7104490156865
+time/total: 14556.060607671738
+time/evaluation: 424.8421537876129
+training/train_loss_mean: 0.054291067148
+training/train_loss_std: 0.0032826762571975918
+training/action_error: 0.05154821649193764
+================================================================================
+Iteration 8
+time/training: 1724.0609369277954
+evaluation/target_3600_return_mean: 3579.642518292514
+evaluation/target_3600_return_std: 187.65610960504927
+evaluation/target_3600_length_mean: 990.89
+evaluation/target_3600_length_std: 54.61902507368651
+time/total: 16660.33681988716
+time/evaluation: 380.2136833667755
+training/train_loss_mean: 0.0536242119949311
+training/train_loss_std: 0.003226614076252341
+training/action_error: 0.046611491590738297
+================================================================================
+Iteration 9
+time/training: 1506.760510444641
+evaluation/target_3600_return_mean: 3584.833790014123
+evaluation/target_3600_return_std: 210.78254175015812
+evaluation/target_3600_length_mean: 989.48
+evaluation/target_3600_length_std: 62.06472105794081
+time/total: 18504.761103391647
+time/evaluation: 337.6623902320862
+training/train_loss_mean: 0.05309712003134191
+training/train_loss_std: 0.0032523197748382023
+training/action_error: 0.05497847869992256
+================================================================================
+Iteration 10
+time/training: 1517.3381321430206
+evaluation/target_3600_return_mean: 3541.3404881509014
+evaluation/target_3600_return_std: 233.9041171393785
+evaluation/target_3600_length_mean: 983.47
+evaluation/target_3600_length_std: 72.68183473193285
+time/total: 20365.52739238739
+time/evaluation: 343.42677664756775
+training/train_loss_mean: 0.05264500945098698
+training/train_loss_std: 0.0032124779309870796
+training/action_error: 0.060120049864053726

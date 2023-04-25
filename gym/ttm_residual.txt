@@ -1,0 +1,8 @@
+inside main
+==================================================
+Starting new experiment: hopper expert
+1027 trajectories, 999494 timesteps found
+Average return: 3511.36, std: 328.59
+Max return: 3759.08, min: 1645.28
+==================================================
+number of parameters: 692158

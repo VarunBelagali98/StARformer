@@ -2,7 +2,7 @@ import os
 import gym
 import numpy as np
 import torch
-import wandb
+#import wandb
 
 import argparse
 import pickle
@@ -16,7 +16,9 @@ from models.decision_transformer import DecisionTransformer
 from models.mlp_bc import MLPBCModel
 from training.act_trainer import ActTrainer
 from training.seq_trainer import SequenceTrainer
-from models.starformer import Starformer, StarformerConfig
+#from models.starformer import Starformer, StarformerConfig
+from models.memstepformer import Starformer, StarformerConfig
+#from models.starformer_stack import Starformer, StarformerConfig
 
 # if using tensorboard
 # from torch.utils.tensorboard import SummaryWriter
@@ -110,7 +112,7 @@ def experiment(
     act_dim = env.action_space.shape[0]
 
     # load dataset
-    dataset_path = f'data/{env_name}-{dataset}-v2.pkl'
+    dataset_path = f'../../atari_helper/{env_name}-{dataset}-v2.pkl'
     with open(dataset_path, 'rb') as f:
         trajectories = pickle.load(f)
 
@@ -348,6 +350,7 @@ def experiment(
 
 
 if __name__ == '__main__':
+    print("inside main")
     parser = argparse.ArgumentParser()
     parser.add_argument('--seed', type=int, default=123)
     parser.add_argument('--env', type=str, default='hopper')

@@ -170,7 +170,7 @@ class VectorPatchEmb(nn.Module):
         else:
             global_state_tokens = self.vec_emb(states.reshape(-1, C)).reshape(B, T, -1) + self.temporal_emb[:, :T]
         local_action_tokens = self.action_emb(actions.reshape(-1, self.config.vocab_size)).reshape(B, T, -1).unsqueeze(2) # B T 1 iD
-#         print (local_action_tokens.size(), local_state_tokens.size())
+        #print (local_action_tokens.size(), local_state_tokens.size())
         if 'rwd' in self.config.model_type:
             local_reward_tokens = self.reward_emb(rewards.reshape(-1, 1)).reshape(B, T, -1).unsqueeze(2)
             local_tokens = torch.cat((local_action_tokens, local_state_tokens, local_reward_tokens), dim=2)
@@ -354,8 +354,10 @@ class Starformer(nn.Module):
         for i, blk in enumerate(self.blocks):
             if i == 0:
                 local_tokens, global_state_tokens, local_att, global_att = blk(local_tokens, global_state_tokens, temporal_emb)
+                #print(local_tokens.shape, global_state_tokens.shape)
             else:
                 local_tokens, global_state_tokens, local_att, global_att = blk(local_tokens, global_state_tokens, temporal_emb)
+                #print(local_tokens.shape, global_state_tokens.shape)
         
         x = self.ln_head(global_state_tokens)
         state_pred = self.state_head(x)
@@ -401,23 +403,23 @@ class StarformerConfig:
         
         
 if __name__ == "__main__":
-    mconf = StarformerConfig(4, img_size = (4, 84, 84), patch_size = (7, 7), context_length=30, pos_drop=0.1, resid_drop=0.1,
-                          N_head=8, D=192, local_N_head=4, local_D=64, model_type='star', max_timestep=100, n_layer=6, C=4, maxT=30)
+    mconf = StarformerConfig(4, context_length=30, pos_drop=0.1, resid_drop=0.1,
+                          N_head=8, D=192, local_N_head=4, local_D=64, model_type='star', max_timestep=100, n_layer=6, C=4, maxT=30, state_dim=10)
 
     model = Starformer(mconf)
     model = model.cuda()
-    dummy_states = torch.randn(3, 28, 4, 84, 84).cuda()
-    dummy_actions = torch.randint(0, 4, (3, 28, 1), dtype=torch.long).cuda()
-    output, atn, loss = model(dummy_states, dummy_actions, None)
-    print (output.size(), output)
+    #dummy_states = torch.randn(3, 30, 10).cuda()
+    #dummy_actions = torch.randn(3, 30, 4).cuda()
+    #output, atn, loss = model(dummy_states, dummy_actions, None)
+    #print (output.size())#, output)
 
-    dummy_states = torch.randn(3, 1, 4, 84, 84).cuda()
-    dummy_actions = torch.randint(0, 4, (3, 1, 1), dtype=torch.long).cuda()
+    dummy_states = torch.randn(3, 30, 10).cuda()
+    dummy_actions = torch.randn(3, 30, 4).cuda()
     output, atn, loss = model(dummy_states, dummy_actions, None)
-    print (output.size(), output)
+    print (output.size(), atn.shape) #, output)
     
-    for pn, p in model.named_parameters():
-        print (pn, p.numel())
+    #for pn, p in model.named_parameters():
+        #print (pn, p.numel())
 #     mconf = StarformerConfig(4, img_size = (4, 84, 84), patch_size = (7, 7), context_length=30, pos_drop=0.1, resid_drop=0.1,
 #                           N_head=8, D=192, local_N_head=4, local_D=64, model_type='star', max_timestep=100, n_layer=6, C=4, maxT = 30)
 

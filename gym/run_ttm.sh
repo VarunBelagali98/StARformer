@@ -1,0 +1,1 @@
+CUDA_VISIBLE_DEVICES=0 python experiment.py --env hopper --dataset expert --model_type star

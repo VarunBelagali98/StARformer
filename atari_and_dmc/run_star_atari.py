@@ -26,8 +26,8 @@ from utils import set_seed, create_dataset, top_k_logits
 
 import atari_py
 
-from starformer import Starformer, StarformerConfig
-
+#from starformer import Starformer, StarformerConfig
+from StepformerTTM import Starformer, StarformerConfig
 
 
 parser = argparse.ArgumentParser()
